@@ -4,9 +4,9 @@
  */
 var fs = require('fs');
 var path = require('path');
-var mongo = require('mongodb');
+var mongo = require('mongoskin');
 var BSON = mongo.BSONPure;
-var db = require('mongoskin').db('localhost:27017/test');
+var db = mongo.db('localhost:27017/test');
 var testcollection = db.collection('testcollection');
 var exercisecollection = db.collection('exercisecollection');
 var expressocollection = db.collection('expressocollection');
@@ -16,8 +16,8 @@ var formidable = require('formidable');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 var dateFormat = require('dateformat');
-var nodeGarminConnect = require('./node-garmin-connect');
-var garminClient = new nodeGarminConnect();
+//var nodeGarminConnect = require('./node-garmin-connect');
+//var garminClient = new nodeGarminConnect();
 
 var app = require('http').createServer(function handler(request, response) {
 
